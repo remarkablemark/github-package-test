@@ -13,7 +13,11 @@ jobs:
         uses: actions/setup-node@v6
 
       - name: Configure registry
-        run: echo '@remarkablemark:registry=https://npm.pkg.github.com' > .npmrc
+        run: |
+          cat <<EOF > .npmrc
+          @my-org:registry=https://npm.pkg.github.com
+          //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+          EOF
 
       - name: Install package
         run: npm install @remarkablemark/test
