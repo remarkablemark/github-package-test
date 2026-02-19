@@ -2,6 +2,7 @@ name: test
 on: push
 
 permissions:
+  contents: read
   packages: read
 
 jobs:
@@ -13,16 +14,12 @@ jobs:
         uses: actions/setup-node@v6
 
       - name: Configure registry
-        run: |
-          cat <<EOF > .npmrc
-          @remarkablemark:registry=https://npm.pkg.github.com
-          //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-          EOF
+        run: echo "@remarkablemark:registry=https://npm.pkg.github.com" > .npmrc
 
       - name: Install package
         run: npm install @remarkablemark/test
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Use package
         run: node -p 'require("@remarkablemark/test").hello()'
