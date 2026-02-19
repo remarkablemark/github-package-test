@@ -22,7 +22,7 @@ jobs:
       - name: Install package
         run: npm install @remarkablemark/test
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Use package
         run: node -p 'require("@remarkablemark/test").hello()'
