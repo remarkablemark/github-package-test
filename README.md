@@ -23,11 +23,15 @@ export GITHUB_TOKEN=ghp_xxx
 
 ## Install
 
+Install the package:
+
 ```sh
 npm install @remarkablemark/test
 ```
 
 ## Usage
+
+Use the package:
 
 ```js
 const { hello } = require('@remarkablemark/test');
