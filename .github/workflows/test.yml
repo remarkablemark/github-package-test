@@ -27,5 +27,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: List package
+        run: npm ls @remarkablemark/test
+
       - name: Use package
         run: node -p 'require("@remarkablemark/test").hello()'
