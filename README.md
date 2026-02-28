@@ -13,7 +13,7 @@ Update `.npmrc`:
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
-Create a [token](https://github.com/settings/tokens) with scope `read:packages` and add to your shell config (e.g., `.zshrc`):
+Create auth [token](https://github.com/settings/tokens) with scope `read:packages` and add it to your shell config (e.g., `.zshrc`):
 
 ```sh
 export GITHUB_TOKEN=ghp_xxx
