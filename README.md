@@ -4,6 +4,8 @@
 
 - [npm](https://github.com/remarkablemark/github-package-test/pkgs/npm/test)
 
+Read the [blog post](https://remarkablemark.org/blog/2026/02/28/how-to-publish-npm-github-package/).
+
 ## Prerequisites
 
 Update `.npmrc`:
